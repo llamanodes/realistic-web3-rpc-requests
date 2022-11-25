@@ -6,16 +6,19 @@ async def get_holdings(erc20_addr, start_block, end_block):
     transfers = await evm.async_get_erc20_transfers(
         token=erc20_addr,
         event_name="Transfer",
-        start_block=start_block,
-        end_block=end_block,
+        # start_block="",
+        # end_block=end_block,
     )
     print("num transfers:", len(transfers))
 
     # get holdings of each address for a given block
     holdings = await evm.async_get_erc20_balances_from_transfers(
-        transfers=transfers, block=end_block
+        transfers=transfers,
+        # block=end_block,
     )
     print("num holdings:", len(holdings))
+
+    raise NotImplementedError
 
 
 async def example():

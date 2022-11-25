@@ -8,9 +8,9 @@ from . import chainlink_feed_history, dao_history, erc20_holdings, uniswap_pool_
 async def main() -> int:
     await asyncio.gather(
         chainlink_feed_history.example(),
-        dao_history.example(),
-        erc20_holdings.example(),
-        uniswap_pool_history.example(),
+        # dao_history.example(),
+        # erc20_holdings.example(),
+        # uniswap_pool_history.example(),
     )
 
     return 0
